@@ -1,0 +1,99 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+         body {
+            background-image: url('../static/hd.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background for better readability */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: red; /* Set the color of the h1 heading to red */
+            font-family:
+
+        }
+         button.btn-primary {
+            background-color: green;
+            border-color: green;
+        }
+
+        .result-alert {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">COVID-19 Risk Prediction</h1>
+        <form id="predictionForm">
+            <div class="form-group">
+               <label for="usmer">USMER (whether the patient treated 1st 2nd 3rd):</label>
+                <input type="number" class="form-control" id="usmer" name="USMER" placeholder="Enter 1, 2, or 3" required>
+            </div>
+
+            <div class="form-group">
+                <label for="medicalUnit">Medical Unit (General Hospital,Clinic,Testing Center,Quarantine Center,Others):</label>
+                <input type="number" class="form-control" id="medicalUnit" name="MEDICAL_UNIT" placeholder="Enter 1-13" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sex">Sex (1 for Female, 2 for Male):</label>
+                <input type="number" class="form-control" id="sex" name="SEX" placeholder="Enter 1 or 2" required>
+            </div>
+
+            <div class="form-group">
+                <label for="patientType">Patient Type (1 for Return Home, 2 for Hospitalization):</label>
+                <input type="number" class="form-control" id="patientType" name="PATIENT_TYPE" placeholder="Enter 1 or 2" required>
+            </div>
+
+           <div class="form-group">
+                <label for="intubed">Intubed (1 for Yes, 2 for No):</label>
+                <input type="number" class="form-control" id="intubed" name="INTUBED" placeholder="Enter 1 or 2" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age of the Patient:</label>
+                <input type="number" class="form-control" id="age" name="AGE" placeholder="Enter the age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pregnant">Pregnant (1 for Yes, 2 for No):</label>
+                <input type="number" class="form-control" id="pregnant" name="PREGNANT" placeholder="Enter 1 or 2" required>
+            </div>
+
+            <div class="form-group">
+                <label for="classificationFinal">COVID Test Classification (1 to 3 for positive, 4 or higher for negative or inconclusive):</label>
+                <input type="number" class="form-control" id="classificationFinal" name="CLASIFFICATION_FINAL" placeholder="Enter the classification" required>
+            </div>
+
+            <div class="form-group">
+                <label for="icu">Admission to Intensive Care Unit (1 for Yes, 2 for No):</label>
+                <input type="number" class="form-control" id="icu" name="ICU" placeholder="Enter 1 or 2" required>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-block" onclick="predict()">Predict</button>
+        </form>
+
+        <div id="predictionResult" class="result-alert"></div>
+    </div>
+    <script src="../static/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

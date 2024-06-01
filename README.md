@@ -5,7 +5,8 @@ Welcome to the COVID-19 Risk Prediction App! This application helps users determ
 
 ## Model creation
 
-Before going to build an app frst use the notebook .ipynb file to train a model and save thn upload the model file in the main directory then go through the below steps.
+Before going to build an app frst use the covid-19 classification notebook .ipynb file to train a model just run all the cells and save trained model then upload the model file in the main directory then go through the below steps.
+
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -32,8 +33,6 @@ To get a local copy up and running, follow these steps:
 
 ### Prerequisites
 - Python 3.7+
-- Node.js (for running the web application)
-
 ### Backend Setup
 1. Clone the repo:
     ```sh
@@ -60,10 +59,7 @@ To get a local copy up and running, follow these steps:
     ```sh
     pip install -r requirements.txt
     ```
-6. Run the FastAPI server:
-    ```sh
-    uvicorn main:app --reload
-    ```
+6. Run the Main.py File:
 
 ## Usage
 1. Ensure the FastAPI server is running.
@@ -90,11 +86,6 @@ Contributions are what make the open source community such an amazing place to l
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
 ## Contact
 Your Name - [thesuriya3@gmail.com](mailto:your-email@example.com)
-
-Project Link: [https://github.com/your-username/covid19-risk-prediction-app](https://github.com/your-username/covid19-risk-prediction-app)
 
